@@ -78,7 +78,20 @@ The system creates history entries for many types of content including lists, re
 ![image](https://github.com/user-attachments/assets/56c621a8-0089-477e-baa5-8ac2e7b783df)
 
 Navigating the ServiceNow platform effectively involves understanding its various user interfaces, from the Application Navigator to the Agent Workspace, and leveraging its tools for personalization, customization, and automation. By mastering these elements, users can optimize their productivity, streamline workflows, and maximize the value they derive from the platform.
+## Data Imports and Integrations
+The process of importing data normally involves pulling data from a **Source** data enitity and loading it into a **Target** data entity.</br>
+In ServiceNow, the import process introduces an intermediary data entity between those two steps. We will refer to that entity simply as **Staging**(ServiceNow calls it an Import Set Table). That entity is an automatically created custom table that is used to stage the imported data prior to processing and loading into the Target. It enhances the performance of the import and provides a useful tool for designing field-level mappings and data transformations.
+So, a ServiceNow import actually involves 3 data entities:
 
+1. **Source**
+   - The entity containing the data to be imported into ServiceNow
+   - ServiceNow is prepared to work with many sources including files(Excel, CSV, JSON, etc.), JDBC-compatable databases, LDAP, REST, and custom scripts
+2. **Staging**
+   - A table that ServiceNow automatically creates as part of the import process to temporarily store data pulled from the source prior to transforming and adding to the Target
+   - Enhances the performance of the import and provides useful tools for designing field-level mappings and data transformations
+3. **Target**
+   - The ServiceNow table into which the data will be imported
+   - This could be an out-of-box ServiceNow table or a custom table created specifically for our purposes
 
 
  
